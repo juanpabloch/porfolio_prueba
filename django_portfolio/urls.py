@@ -36,7 +36,6 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('projects/', views.projects_view, name='projects_view'),
     path('contact/', contact, name='contact'),  # Agrega esta línea
-    
 ]
 
 # Agrega la configuración para servir archivos multimedia (archivos cargados) durante el desarrollo.

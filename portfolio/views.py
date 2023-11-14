@@ -1,6 +1,6 @@
 # Importa la función 'render' del módulo 'django.shortcuts' para renderizar las plantillas HTML.
 from django.shortcuts import render
-
+from django.contrib.auth import get_user_model
 # from django.views.decorators.csrf import csrf_protect
 
 
