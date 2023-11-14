@@ -27,6 +27,9 @@ from django.conf import settings
 from portfolio import views
 from enviaemail.views import contact
 
+from django.views.static import serve
+from django.urls import re_path
+
 
 # Define las URL de tu aplicación.
 urlpatterns = [
@@ -36,6 +39,12 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('projects/', views.projects_view, name='projects_view'),
     path('contact/', contact, name='contact'),  # Agrega esta línea
+]
+
+urlpatterns += [
+    re_path(r'^media/(?P<path>.*)$', serve, {
+        'document_root': settings.MEDIA_ROOT,
+    }),
 ]
 
 # Agrega la configuración para servir archivos multimedia (archivos cargados) durante el desarrollo.
