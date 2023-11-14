@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
+{% load static %}
 
 {% block content %}
 
-    {% load static %}
     <main>
         <!------------------------------------------- CARROUSEL ------------------------------------------->
         <section class="carousel-section" id="home">
@@ -104,7 +104,7 @@
                         <div class="project-item">
                             <h2 class="title-project">{{project.title}}</h2>
                             <p>{{project.description | safe | truncatechars:20}}</p>
-                            <img src="{{project.image.url}}" alt="" class="img-fluid"><br>
+                            <img src="{% get_media_prefix %}{{project.image.url}}" alt="" class="img-fluid"><br>
                             {% if project.url %}
                             <button class="raise"><a class='raise' data-text='Github' href='{{project.github}}' target="_blank">View GitHub</a></button>
                             <button class="raise"><a class='raise' data-text='Ver project' href='{{project.url}}' target="_blank">View project</a></button>
